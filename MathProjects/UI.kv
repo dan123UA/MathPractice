@@ -1,0 +1,101 @@
+WindowManager:
+    MainWindow:
+<MainWindow>:
+    id: main_id
+    name: "main"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width , root.height
+        padding:20
+        spacing:10
+        BoxLayout:
+            orientation: "horizontal"
+            size: root.width , root.height
+            padding:20
+            spacing:10
+            Label:
+                text: "Нелінійні рівняння (Метод Ньютона)"
+                font_size: 40
+                bold: True
+                color: '#00FFCE'
+        BoxLayout:
+            orientation: "horizontal"
+            size: root.width , root.height
+            padding:20
+            spacing:10
+            Label:
+                text: "(3x - cosX - 1 = 0)"
+                font_size: 35
+                bold: True
+                color: '#00FFCE'
+        BoxLayout:
+            orientation: "horizontal"
+            size: root.width , root.height
+            padding:20
+            spacing:10
+            Label:
+                text: "Point a(int) :"
+                font_size: 20
+                bold: True
+                size_hint: (0.5, 0.5)
+                color: '#00FFCE'
+            Label:
+                text: "Point b(int) :"
+                font_size: 20
+                bold: True
+                size_hint: (0.5, 0.5)
+                color: '#00FFCE'
+            Label:
+                text: "Point E(float) :"
+                font_size: 20
+                bold: True
+                size_hint: (0.5, 0.5)
+                color: '#00FFCE'
+            Button:
+                #Empty Button to fill gap on top of the green button
+                text: ""
+                size_hint: (0.5, 0.5)
+                bold: True
+                background_color: '#000000'
+        BoxLayout:
+            orientation: "horizontal"
+            size: root.width , root.height
+            padding:20
+            spacing:10
+            TextInput:
+                id: input_id1
+                text:"1"
+                multiline: False
+                font_size: 60
+                size_hint: (1, 1)
+                bold: True
+                on_text_validate:
+                    main_id.on_enter()
+            TextInput:
+                id: input_id2
+                text:"2"
+                multiline: False
+                font_size: 60
+                size_hint: (1, 1)
+                bold: True
+                on_text_validate:
+                    main_id.on_enter()
+            TextInput:
+                id: input_id3
+                text:"0.1"
+                multiline: False
+                font_size: 60
+                size_hint: (1, 1)
+                bold: True
+                on_text_validate:
+                    main_id.on_enter()
+            Button:
+                text: "Confirm"
+                font_size: 40
+                size_hint: (1, 1)
+                bold: True
+                background_color: '#00FFCE'
+                on_release:
+                    main_id.on_confirm()
+                    #Setting transition animation
+                    root.manager.transition.direction = "left"
